@@ -1,0 +1,37 @@
+<div class="jumbotron">
+    <h3>СИСТЕМА ПОДДЕРЖКИ ПРИНЯТИЯ РЕШЕНИЙ</h3>
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3>Введите логин и пароль!</h3>
+        </div>
+        <div class="modal-body">
+            <div ng-show="showError" class="alert alert-danger">Неправильный логин или пароль</div>
+            <form role="form">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Имя</label>
+                    <input type="text" ng-model="name" class="form-control" placeholder="Введите имя">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Пароль</label>
+                    <input type="password" ng-model="password" class="form-control" placeholder="Введите пароль">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" ng-click="ok()">Вход</button>
+            <button class="btn btn-error" ng-click="cancel()">Отмена</button>
+        </div>
+    </script>
+
+    <p class="lead">
+        <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+    </p>
+    <p>
+        <a ng-click="go('/region')" class="btn btn-lg btn-primary">Регион</a>
+        <a ng-click="go('/investor')" class="btn btn-lg btn-success">Инвестор</a>
+        <a href="#analyze" class="btn btn-lg btn-info">Анализ</a>
+        <a href="#region" class="btn btn-lg btn-warning">Тутор</a>
+    </p>
+</div>
+
