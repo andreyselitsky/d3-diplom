@@ -18,6 +18,11 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
+      <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
+      <script>
+          window.dbUrl = 'http://localhost:49106/Home';
+      </script>
   </head>
   <body ng-app="d3DiplomApp">
     <!--[if lt IE 7]>
@@ -43,6 +48,7 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/jquery.js"></script>
@@ -55,15 +61,20 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/venturocket-angular-slider/build/angular-slider.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/slider.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/investor.js"></script>
         <script src="scripts/controllers/region.js"></script>
         <script src="scripts/controllers/analyze.js"></script>
+        <script src="scripts/services/dataBase.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('d3DiplomApp')
-    .controller('RegionCtrl', function ($scope) {
+    .controller('RegionCtrl', function ($scope, Database) {
         $scope.showForm = function () {
             $scope.newForm = true;
         };
 
-        $scope.graphString = '3,2,1,3,1,1,0,1,1,0';
+        $scope.graphString = '3,2,1,3';
 
         $scope.children = [];
 
@@ -36,7 +36,7 @@ angular.module('d3DiplomApp')
                 for (var j = 0; j < $scope.children[i].children.length; j++) {
                     var children = [];
 
-                    for (var k = 0; k < parseInt(split[counter]); k++) {
+                    for (var k = 0; k < 1; k++) {
                         children.push({name: ''});
                     }
 
@@ -50,11 +50,9 @@ angular.module('d3DiplomApp')
 
         $scope.saveGraph = function () {
             var graph = {name: $scope.regionName, children: $scope.children};
+            Database.addRegion(graph);
 
-            var graphs = localStorage.getItem('graphs') ? JSON.parse(localStorage.getItem('graphs')) : [];
-            graphs.push(graph);
-
-            localStorage.setItem('graphs', JSON.stringify(graphs));
+            //localStorage.setItem('graphs', JSON.stringify(graphs));
             localStorage.setItem('graph', JSON.stringify(graph));
             $scope.canDraw = true;
         }

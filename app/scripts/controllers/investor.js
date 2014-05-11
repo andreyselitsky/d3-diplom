@@ -1,20 +1,30 @@
 'use strict';
 
 angular.module('d3DiplomApp')
-  .controller('InvestorCtrl', function ($scope) {
+    .controller('InvestorCtrl', function ($scope, Database) {
         $scope.showForm = function () {
             $scope.newForm = true;
-            $scope.investor = {};
+            $scope.investor = {
+                porog: 50
+            };
             $scope.savedInvestor = null;
         };
 
-        $scope.saveInvestor = function(){
+        $scope.saveInvestor = function () {
             $scope.newForm = false;
-            var investors = localStorage.getItem('investors') ? JSON.parse(localStorage.getItem('investors')) : [];
-            investors.push($scope.investor);
-
-            localStorage.setItem('investors', JSON.stringify(investors));
-
+            Database.addInvestor($scope.investor);
             $scope.savedInvestor = $scope.investor;
         }
-  });
+
+        $scope.colorpicker = {
+            red: 255,
+            green: 140,
+            blue: 60,
+            options: {
+                orientation: 'horizontal',
+                min: 0,
+                max: 100,
+                range: 'min'
+            }
+        };
+    });

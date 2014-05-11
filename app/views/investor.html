@@ -1,3 +1,12 @@
+<style>
+    #red .ui-slider-range { background: #ef2929; }
+    #red .ui-slider-handle { border-color: #ef2929; }
+    #green .ui-slider-range { background: #8ae234; }
+    #green .ui-slider-handle { border-color: #8ae234; }
+    #blue .ui-slider-range { background: #729fcf; }
+    #blue .ui-slider-handle { border-color: #729fcf;
+</style>
+
 <div class="row">
     <div class="col-lg-6">
         <p>
@@ -34,6 +43,14 @@
                             <label>Ресурсы:</label>
                             <input type="text" class="form-control" ng-model="investor.resources"
                                    placeholder="Введите ресурсы">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Порог Совпадения:</label>
+
+                            {{investor.porog}}%
+                            <div id="blue" ui-slider="colorpicker.options" ng-model="investor.porog" class="ng-valid ui-slider ui-widget ui-widget-content ui-corner-all ui-slider-horizontal ng-dirty" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
+
                         </div>
 
                         <button class="btn btn-primary" ng-click="saveInvestor()" type="button">Создать</button>
